@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3008/api/tasks'; // Backend API URL
+const apiUrl = 'http://ec2-34-205-29-69.compute-1.amazonaws.com:8087/api/tasks'; // Backend API URL
 
 // Fetch and display tasks
 async function fetchTasks() {
