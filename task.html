@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+    </header>
+    <section id="tasks">
+        <h2>Tasks</h2>
+        <ul id="taskList">
+            <!-- Tasks will be displayed here -->
+        </ul>
+    </section>
+    <section id="addTask">
+        <h2>Add New Task</h2>
+        <form id="taskForm">
+            <label for="taskDescription">Task Description:</label>
+            <input type="text" id="taskDescription" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+    <script src="task.js"></script>
+</body>
+</html>
