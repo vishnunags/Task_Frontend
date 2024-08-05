@@ -1,55 +1,216 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    color: #333;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-section {
-    padding: 20px;
+.container {
+    max-width: 1200px;
     margin: 20px auto;
-    max-width: 800px;
-    background-color: white;
-    border: 1px solid #ddd;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #4caf50;
 }
 
 button {
-    background-color: #007bff;
+    background: #4caf50;
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: #45a049;
+    transform: scale(1.05);
 }
 
-form {
+/* Kanban Board Styles */
+.kanban-board {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-label {
-    margin-top: 10px;
+.column {
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.column h2 {
+    text-align: center;
+    color: #333;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
-li {
+.task-item {
+    background: #fff;
+    border-radius: 5px;
+    margin: 10px 0;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.task-item:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background: #e53935;
+}
+
+/* Hidden Form */
+.hidden {
+    display: none;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.custom-checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #4caf50;
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark::after {
+    display: block;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Add Task Form Styles */
+#add-task-form {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#add-task-form h2 {
+    margin-top: 0;
+}
+
+#add-task-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#add-task-form input, #add-task-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#cancel-task-btn {
+    background: #f44336;
+}
+
+#cancel-task-btn:hover {
+    background: #e53935;
+}
+
+/* Confirmation Modal Styles */
+#confirm-delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.modal-content button {
+    margin: 10px;
+    background: #4caf50;
+}
+
+.modal-content button.cancel {
+    background: #f44336;
+}
+
+.modal-content button.cancel:hover {
+    background: #e53935;
 }
